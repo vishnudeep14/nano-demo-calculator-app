@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/calculator/greeting", methods=['GET'])
 def greeting():
-    return "Hello world",200
+    return "Hello world!",200
 
 @app.route("/calculator/add", methods=['POST'])
 def add():
@@ -14,7 +14,7 @@ def add():
         first = data['first']
         second = data['second']
         result = first + second
-        return jsonify({'result of summation': result}),200
+        return jsonify({'result-of-the-summation': result}),200
     else:
         return jsonify({'error': 'Invalid data'}), 400
 
@@ -25,7 +25,7 @@ def subtract():
         num1 = data['first']
         num2 = data['second']
         result = num1 - num2
-        return jsonify({'result in subtraction': result}),200
+        return jsonify({'result-of-the-subtraction': result}),200
     else:
         return jsonify({'error': 'Invalid data'}), 400
 
